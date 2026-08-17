@@ -33,6 +33,14 @@ def tickets():
         }
     ]
 
+@app.route("/sobre")
+def sobre():
+    return {
+        "name": "API SCCP",
+        "version": "1.0.0",
+        "status": "ok"
+    }
+
 
 if __name__ == "__main__":
     app.run(debug=True)
