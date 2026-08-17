@@ -10,7 +10,7 @@ def route():
 def status():
     return {
         "status": "ok",
-        "version": "1.0.0",
+        "version": "1.2.0",
     }
 
 @app.route("/tickets")
@@ -37,7 +37,7 @@ def tickets():
 def sobre():
     return {
         "name": "API SCCP",
-        "version": "1.0.0",
+        "version": "1.2.0",
         "status": "ok"
     }
 
