@@ -13,6 +13,26 @@ def status():
         "version": "1.0.0",
     }
 
+@app.route("/tickets")
+def tickets():
+    return [
+        {
+            "id": 1,
+            "title": "Erro ao fazer login",
+            "status": "aberto"
+        },
+        {
+            "id": 2,
+            "title": "Problema no pagamento",
+            "status": "em andamento"
+        },
+        {
+            "id": 3,
+            "title": "Dúvida sobre cadastro",
+            "status": "fechado"
+        }
+    ]
+
 
 if __name__ == "__main__":
     app.run(debug=True)
