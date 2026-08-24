@@ -38,7 +38,16 @@ def sobre():
     return {
         "name": "API SCCP",
         "version": "1.2.0",
-        "status": "ok"
+        "description": "API para gerenciamento e consulta de dados do SCCP.",
+        "status": "ok",
+        "environment": "production",
+        "author": "Equipe SCCP",
+        "documentation": "/docs",
+        "endpoints": {
+            "sobre": "/sobre",
+            "health": "/health",
+            "usuarios": "/usuarios"
+        }
     }
 
 
