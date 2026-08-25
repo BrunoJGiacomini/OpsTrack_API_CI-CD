@@ -30,6 +30,16 @@ def tickets():
             "id": 3,
             "title": "Dúvida sobre cadastro",
             "status": "fechado"
+        },
+        {
+            "id": 4,
+            "title": "Erro ao carregar dashboard",
+            "status": "aberto"
+        },
+        {
+            "id": 5,
+            "title": "Solicitação de reembolso",
+            "status": "em andamento"
         }
     ]
 
