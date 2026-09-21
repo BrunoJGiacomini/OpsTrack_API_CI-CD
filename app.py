@@ -1,17 +1,20 @@
 from flask import Flask
-
 app = Flask(__name__)
+
 
 @app.route("/route", methods=["GET"])
 def route():
     return "Vai Corinthians!"
+
 
 @app.route("/status")
 def status():
     return {
         "status": "ok",
         "version": "1.2.0",
+
     }
+
 
 @app.route("/tickets")
 def tickets():
@@ -31,7 +34,9 @@ def tickets():
             "title": "Dúvida sobre cadastro",
             "status": "fechado"
         }
+
     ]
+
 
 @app.route("/sobre")
 def sobre():
