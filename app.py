@@ -20,14 +20,14 @@ def route():
 @app.route("/status", methods=["GET"])
 def status():
     return {
-        "status": "ok",
+        "status": "ok"
     }
 
 
     @app.route("/version", methods=["GET"])
     def status():
         return {
-        "version": "1.2.0"
+            "version": "1.2.0"
         }
 
 
