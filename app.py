@@ -11,25 +11,21 @@ def raiz():
         "status": "online"
     }, 200
 
-
 @app.route("/route", methods=["GET"])
 def route():
     return "Vai Corinthians!"
 
-
 @app.route("/status", methods=["GET"])
 def status():
     return {
-        "status": "ok",
+        "status": "ok"
     }
 
-
-    @app.route("/version", methods=["GET"])
-    def status():
-        return {
+@app.route("/version", methods=["GET"])
+def version():
+    return {
         "version": "1.2.0"
-        }
-
+    }
 
 @app.route("/tickets", methods=["GET"])
 def tickets():
@@ -53,7 +49,6 @@ def tickets():
         ]
     }), 200
 
-
 @app.route("/usuarios", methods=["GET"])
 def usuarios():
     return jsonify({
@@ -62,7 +57,6 @@ def usuarios():
             {"id": 2, "nome": "Carlos"}
         ]
     }), 200
-
 
 @app.route("/sobre", methods=["GET"])
 def sobre():
@@ -81,7 +75,5 @@ def sobre():
         }
     }
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-

@@ -8,11 +8,11 @@ def test_raiz_informa_servico_online(client):
     assert resposta.get_json() == esperado
 
 
-    def test_version_retorna_versao(client):
-        resposta = client.get('/version')
-        assert resposta.status_code == 200
-        j = resposta.get_json()
-        assert j['version'] == '1.3'
+def test_version_retorna_versao(client):
+    resposta = client.get('/version')
+    assert resposta.status_code == 200
+    j = resposta.get_json()
+    assert j['version'] == '1.3'
 
 
 def test_status_retorna_ok(client):
@@ -46,3 +46,20 @@ def test_rota_inexistente_retorna_404(client):
     # Assert: o status deve ser 404.
     assert resposta is not None, 'Complete o Act: GET em rota inexistente'
     assert resposta.status_code == 404
+
+
+def test_route_retorna_mensagem_do_time(client):
+    resposta = client.get('/route')
+    assert resposta.status_code == 200
+    assert resposta.get_data(as_text=True) == 'Vai Corinthians!'
+
+
+def test_sobre_retorna_informacoes_da_api(client):
+    resposta = client.get('/sobre')
+    assert resposta.status_code == 200
+    dados = resposta.get_json()
+    assert dados['name'] == 'API SCCP'
+    assert dados['version'] == '1.2.0'
+    assert dados['status'] == 'ok'
+    assert dados['environment'] == 'production'
+    assert dados['author'] == 'Equipe SCCP'
