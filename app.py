@@ -1,5 +1,15 @@
-from flask import Flask
+
+from flask import Flask, jsonify
+
 app = Flask(__name__)
+
+
+@app.route("/", methods=["GET"])
+def raiz():
+    return {
+        "servico": "OpsTrack API",
+        "status": "online"
+    }, 200
 
 
 @app.route("/route", methods=["GET"])
@@ -7,38 +17,54 @@ def route():
     return "Vai Corinthians!"
 
 
-@app.route("/status")
+@app.route("/status", methods=["GET"])
 def status():
     return {
         "status": "ok",
-        "version": "1.2.0",
-
     }
 
 
-@app.route("/tickets")
-def tickets():
-    return [
-        {
-            "id": 1,
-            "title": "Erro ao fazer login",
-            "status": "aberto"
-        },
-        {
-            "id": 2,
-            "title": "Problema no pagamento",
-            "status": "em andamento"
-        },
-        {
-            "id": 3,
-            "title": "Dúvida sobre cadastro",
-            "status": "fechado"
+    @app.route("/version", methods=["GET"])
+    def status():
+        return {
+        "version": "1.2.0"
         }
 
-    ]
+
+@app.route("/tickets", methods=["GET"])
+def tickets():
+    return jsonify({
+        "tickets": [
+            {
+                "id": 1,
+                "titulo": "Erro ao fazer login",
+                "status": "aberto"
+            },
+            {
+                "id": 2,
+                "titulo": "Problema no pagamento",
+                "status": "em andamento"
+            },
+            {
+                "id": 3,
+                "titulo": "Dúvida sobre cadastro",
+                "status": "fechado"
+            }
+        ]
+    }), 200
 
 
-@app.route("/sobre")
+@app.route("/usuarios", methods=["GET"])
+def usuarios():
+    return jsonify({
+        "usuarios": [
+            {"id": 1, "nome": "Ana"},
+            {"id": 2, "nome": "Carlos"}
+        ]
+    }), 200
+
+
+@app.route("/sobre", methods=["GET"])
 def sobre():
     return {
         "name": "API SCCP",
@@ -58,3 +84,4 @@ def sobre():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
