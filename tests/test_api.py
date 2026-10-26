@@ -12,7 +12,7 @@ def test_version_retorna_versao(client):
     resposta = client.get('/version')
     assert resposta.status_code == 200
     j = resposta.get_json()
-    assert j['version'] == '1.3'
+    assert j['version'] == '1.2.0'
 
 
 def test_status_retorna_ok(client):
