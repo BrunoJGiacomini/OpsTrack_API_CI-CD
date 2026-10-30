@@ -1,3 +1,5 @@
+![CI](https://github.com/BrunoJGiacomini/OpsTrack_API_CI-CD/actions/workflows/ci.yml/badge.svg)
+
 # OpsTrack API
 
 API em Python com Flask para servir informações de status, dados de exemplo e endpoints de consulta.
