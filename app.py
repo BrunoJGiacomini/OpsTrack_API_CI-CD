@@ -7,7 +7,7 @@ app = Flask(__name__)
 def raiz():
     return {
         "servico": "OpsTrack API",
-        "status": "online"
+        "status": "offline"
     }, 200
 
 
