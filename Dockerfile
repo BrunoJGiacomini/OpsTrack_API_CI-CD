@@ -10,4 +10,4 @@ USER appuser
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/status')"
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app
